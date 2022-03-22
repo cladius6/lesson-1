@@ -17,4 +17,8 @@ describe("TurboNumber()", () => {
     const tn = new TurboNumber(10)
     expect(() => tn.subtract(0)).toThrow('Cannot divide by 0.');
   });
+
+  it("Method chaining should work and returns correct result.", () => {
+    expect(new TurboNumber(17).subtract(5).divide(-3).result()).toBe(-4);
+  });
 });
