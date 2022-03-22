@@ -5,6 +5,7 @@ export class TurboNumber {
         this.lNum = this.lNum/rNum;
     }
     subtract(rNum: number) {
+        if (rNum === 0) throw new Error('Cannot divide by 0.')
         this.lNum = this.lNum-rNum;
     }
     result() {

@@ -12,4 +12,9 @@ describe("TurboNumber()", () => {
     tn.subtract(2);
     expect(tn.result()).toBe(8);
   });
+
+  it("Throw error when divide by 0.", () => {
+    const tn = new TurboNumber(10)
+    expect(() => tn.subtract(0)).toThrow('Cannot divide by 0.');
+  });
 });
