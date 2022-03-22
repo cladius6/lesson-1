@@ -5,7 +5,7 @@ describe("TurboNumber()", function () {
     const a = new TurboNumber(2);
 
     a.divide(2);
-    const res = a.getResult()
+    const res = a.result();
     expect(res).toBe(1);
   });
   it("Should returns '-1', when substract 3 and 4.", () => {
@@ -13,7 +13,7 @@ describe("TurboNumber()", function () {
 
     a.substract(4);
 
-    const res = a.getResult();
+    const res = a.result();
     expect(res).toBe(-1);
   });
 
@@ -25,5 +25,10 @@ describe("TurboNumber()", function () {
   it("Should throw error when number is overflow.", () => {
     const a = new TurboNumber(Number.MAX_VALUE);
     expect(() => a.substract(10)).toThrow('Number overflow.');
+  });
+
+  it("Failing test.", () => {
+    const failed = new TurboNumber(17).substract(5).divide(-3).result();
+    expect(failed).toBe(-4);
   });
 });
