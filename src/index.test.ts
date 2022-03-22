@@ -1,7 +1,34 @@
-import { number } from "./index";
+import { TurboNumber } from "./index";
 
-describe("number", function () {
-  it("works", () => {
-    expect(number).toBe(5);
+describe("TurboNumber()", function () {
+  it("Should returns '1', when divide 2 and 2.", () => {
+    const a = new TurboNumber(2);
+
+    a.divide(2);
+    const res = a.getResult()
+    expect(res).toBe(1);
+  });
+  it("Should returns '-1', when substract 3 and 4.", () => {
+    const a = new TurboNumber(3);
+
+    a.substract(4);
+
+    const res = a.getResult();
+    expect(res).toBe(-1);
+  });
+
+  it("Should throw error when try to divide by zero.", () => {
+    const a = new TurboNumber(2);
+    expect(() => a.divide(0)).toThrow('Cannot divide by zero.');
+  });
+
+  it("Should throw error when number is too small.", () => {
+    const a = new TurboNumber(-10);
+    expect(() => a.substract(-9007199254740991)).toThrow('Number is too small.');
+  });
+
+  it("Should throw error when number is too big.", () => {
+    const a = new TurboNumber(9007199254740991);
+    expect(() => a.substract(-15)).toThrow('Number is too big.');
   });
 });
