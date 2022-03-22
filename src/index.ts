@@ -7,11 +7,11 @@ export class TurboNumber {
   }
   substract(y: number): TurboNumber{
     this.res = this.x-y;
-    if (this.x === Number.MAX_VALUE && this.res < 0) throw 'Number overflow.';
+    if (this.x === Number.MAX_VALUE && this.res < 0) throw new Error('Number overflow.');
     return this
   }
   divide(y: number): TurboNumber{
-    if (y == 0) throw 'Cannot divide by zero.';
+    if (y == 0) throw new Error('Cannot divide by zero.');
     this.res = this.x/y;
     return this
   }
