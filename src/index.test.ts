@@ -22,13 +22,8 @@ describe("TurboNumber()", function () {
     expect(() => a.divide(0)).toThrow('Cannot divide by zero.');
   });
 
-  it("Should throw error when number is too small.", () => {
-    const a = new TurboNumber(-10);
-    expect(() => a.substract(-9007199254740991)).toThrow('Number is too small.');
-  });
-
-  it("Should throw error when number is too big.", () => {
-    const a = new TurboNumber(9007199254740991);
-    expect(() => a.substract(-15)).toThrow('Number is too big.');
+  it("Should throw error when number is overflow.", () => {
+    const a = new TurboNumber(Number.MAX_VALUE);
+    expect(() => a.substract(10)).toThrow('Number overflow.');
   });
 });
