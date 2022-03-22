@@ -6,4 +6,10 @@ describe("TurboNumber()", () => {
     tn.divide(2);
     expect(tn.result()).toBe(5);
   });
+
+  it("10 subtract by 2 returns 8.", () => {
+    const tn = new TurboNumber(10)
+    tn.subtract(2);
+    expect(tn.result()).toBe(8);
+  });
 });

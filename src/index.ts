@@ -4,6 +4,9 @@ export class TurboNumber {
     divide(rNum: number) {
         this.lNum = this.lNum/rNum;
     }
+    subtract(rNum: number) {
+        this.lNum = this.lNum-rNum;
+    }
     result() {
         return this.lNum;
     }
