@@ -9,7 +9,7 @@ import { NokiaTexter } from "./nokia";
 */
 
 describe(NokiaTexter.name, () => {
-  it.skip("should return 'ZARAZwracam' when 'zaraz wracam' is given", () => {
+  it("should return 'ZARAZwracam' when 'zaraz wracam' is given", () => {
     //when
     const example = new NokiaTexter("zaraz wracam");
     //then
