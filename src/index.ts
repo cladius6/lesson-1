@@ -1,18 +1,21 @@
 export class TurboNumber {
   private x: number;
-  private result: number;
+  res: number;
   constructor(x: number) {
     this.x = x;
-    this.result = 0;
+    this.res = 0;
   }
-  substract(y: number): void{
-    this.result = this.x-y;
+  substract(y: number): TurboNumber{
+    this.res = this.x-y;
+    if (this.x === Number.MAX_VALUE && this.res < 0) throw 'Number overflow.';
+    return this
   }
-  divide(y: number): void{
+  divide(y: number): TurboNumber{
     if (y == 0) throw 'Cannot divide by zero.';
-    this.result = this.x/y;
+    this.res = this.x/y;
+    return this
   }
-  public getResult(): number {
-    return this.result;
+  result(): number{
+    return this.res;
   }
 }
